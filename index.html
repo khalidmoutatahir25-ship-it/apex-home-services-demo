@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Apex Home Services — 24/7 Plumbers, HVAC &amp; Handymen</title>
+<meta name="description" content="Apex Home Services: 24/7 emergency plumbers, HVAC engineers and handymen. Upfront flat-rate pricing, licensed & insured, 2-year workmanship guarantee.">
+<style>
+/* ============================================================
+   APEX HOME SERVICES — Plumber / HVAC / Handyman Template
+   Customise: search for "EDIT:" comments, or change the CSS
+   variables below to re-brand the whole site in seconds.
+   ============================================================ */
+:root{
+  --accent:#ff6a00;          /* EDIT: main brand colour (safety orange) */
+  --accent-dark:#d95700;
+  --accent-soft:#fff1e6;
+  --ink:#14181d;
+  --ink-2:#1d232b;
+  --ink-soft:#333c46;
+  --muted:#67727e;
+  --paper:#f7f5f1;
+  --line:#e5e0d8;
+  --white:#ffffff;
+  --green:#1f9d63;
+  --radius:16px;
+  --shadow:0 18px 40px -16px rgba(20,24,29,.28);
+  --shadow-card:0 10px 26px -12px rgba(20,24,29,.18);
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,.8,.28,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin-inline:auto}
+section{padding:92px 0;position:relative}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.015em}
+h2{font-size:clamp(1.9rem,3.6vw,2.65rem);margin-bottom:14px;text-transform:none}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-soft);padding:7px 14px;border-radius:6px;margin-bottom:18px}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+.section-head{max-width:660px;margin-bottom:52px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.on-dark .section-head p{color:#a7b2bd}
+.on-dark h2{color:#fff}
+.on-dark .eyebrow{background:rgba(255,106,0,.16);color:#ffb27a}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1rem;padding:15px 30px;border-radius:10px;border:2px solid transparent;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s,color .3s;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-call{background:var(--accent);color:#fff;box-shadow:0 14px 28px -10px rgba(255,106,0,.55)}
+.btn-call:hover{background:var(--accent-dark);transform:translateY(-3px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink-2);transform:translateY(-3px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:#c9c2b6}
+.btn-outline:hover{border-color:var(--ink);transform:translateY(-3px)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-outline-light:hover{border-color:#fff;transform:translateY(-3px)}
+
+/* ---------- Emergency strip ---------- */
+.emergency-strip{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.emergency-strip::after{content:"";position:absolute;inset:auto 0 0 0;height:5px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#14181d 14px 28px)}
+.emergency-strip .container{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:11px;padding-bottom:16px;flex-wrap:wrap}
+.es-left{display:flex;align-items:center;gap:12px;font-weight:700;font-size:.95rem}
+.es-dot{width:11px;height:11px;border-radius:50%;background:#ff3b30;flex:none;animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,59,48,.55)}70%{box-shadow:0 0 0 9px rgba(255,59,48,0)}100%{box-shadow:0 0 0 0 rgba(255,59,48,0)}}
+.es-left .es-sub{color:#a7b2bd;font-weight:600}
+.es-call{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;font-weight:800;padding:9px 18px;border-radius:8px;font-size:.95rem;transition:background .3s,transform .3s}
+.es-call:hover{background:var(--accent-dark);transform:translateY(-2px)}
+.es-call svg{width:16px;height:16px}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 12px 28px -14px rgba(20,24,29,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.3rem;letter-spacing:-.02em;text-transform:uppercase}
+.logo-mark{width:45px;height:45px;border-radius:11px;background:var(--ink);display:grid;place-items:center;position:relative;overflow:hidden}
+.logo-mark::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:repeating-linear-gradient(-45deg,var(--accent) 0 8px,transparent 8px 16px)}
+.logo-mark svg{width:25px;height:25px;stroke:var(--accent)}
+.logo small{display:block;font-size:.64rem;font-weight:700;letter-spacing:.3em;color:var(--muted)}
+.nav-links{display:flex;gap:32px;font-weight:700;font-size:.95rem}
+.nav-links a{position:relative;padding:4px 0;color:var(--ink-soft)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .32s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger svg{width:28px;height:28px;stroke:var(--ink)}
+.mobile-menu{display:none;flex-direction:column;gap:4px;padding:10px 0 20px;border-top:1px solid var(--line)}
+.mobile-menu a{padding:11px 6px;font-weight:700;color:var(--ink-soft);border-radius:8px}
+.mobile-menu a:hover{background:var(--paper);color:var(--ink)}
+.mobile-menu.open{display:flex}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--ink);color:#fff;padding:88px 0 0;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(640px 420px at 85% -10%,rgba(255,106,0,.22),transparent 60%),
+  linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:auto,44px 44px,44px 44px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center;position:relative}
+.hero .eyebrow{background:rgba(255,106,0,.16);color:#ffb27a}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.15rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1.04;margin-bottom:20px}
+.hero h1 .hl{color:var(--accent)}
+.hero-sub{color:#b9c3cd;font-size:1.12rem;max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.hero-actions .btn-call{animation:ctaGlow 2.6s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 14px 28px -10px rgba(255,106,0,.55)}50%{box-shadow:0 14px 38px -6px rgba(255,106,0,.85)}}
+.hero-points{display:flex;gap:24px;flex-wrap:wrap;font-size:.92rem;font-weight:700;color:#dbe2e9}
+.hero-points span{display:inline-flex;align-items:center;gap:8px}
+.hero-points svg{width:17px;height:17px;stroke:var(--accent);flex:none}
+.hero-panel{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:30px;box-shadow:var(--shadow);position:relative}
+.hero-panel::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:20px 20px 0 0;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#14181d 14px 28px)}
+.hp-head{display:flex;align-items:center;justify-content:space-between;margin:8px 0 20px}
+.hp-head h3{color:#fff;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+.hp-live{display:inline-flex;align-items:center;gap:7px;font-size:.75rem;font-weight:800;letter-spacing:.1em;color:#7ee2ae;text-transform:uppercase}
+.hp-live i{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:pulse 1.8s infinite}
+.hp-row{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;margin-bottom:11px;transition:background .3s,transform .3s var(--ease)}
+.hp-row:hover{background:rgba(255,255,255,.09);transform:translateX(5px)}
+.hp-row .ic{width:42px;height:42px;flex:none;border-radius:10px;background:rgba(255,106,0,.16);display:grid;place-items:center}
+.hp-row .ic svg{width:22px;height:22px;stroke:var(--accent)}
+.hp-row strong{color:#fff;font-size:.96rem;display:block;line-height:1.3}
+.hp-row span{color:#a7b2bd;font-size:.83rem}
+.hp-row .eta{margin-left:auto;text-align:right;flex:none}
+.hp-row .eta strong{color:#ffb27a}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.09);border-top:1px solid rgba(255,255,255,.09);margin-top:70px;position:relative}
+.hstat{background:var(--ink);padding:26px 18px;text-align:center}
+.hstat .num{font-size:1.9rem;font-weight:900;color:#fff;line-height:1}
+.hstat .num em{font-style:normal;color:var(--accent)}
+.hstat .lbl{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8b96a1;margin-top:6px}
+
+/* ---------- Trust badges marquee ---------- */
+.badges{background:var(--paper);border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden}
+.badges-track{display:flex;gap:56px;width:max-content;animation:marquee 30s linear infinite}
+.badges:hover .badges-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.badge-item{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--ink-soft);white-space:nowrap;font-size:.98rem}
+.badge-item svg{width:24px;height:24px;stroke:var(--accent-dark);flex:none}
+.badge-item small{display:block;font-weight:600;color:var(--muted);font-size:.74rem}
+
+/* ---------- Services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.service-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:28px 24px;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;overflow:hidden}
+.service-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent);transform:scaleY(0);transition:transform .35s var(--ease)}
+.service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-card);border-color:transparent}
+.service-card:hover::after{transform:scaleY(1)}
+.service-icon{width:56px;height:56px;border-radius:13px;background:var(--ink);display:grid;place-items:center;margin-bottom:18px;transition:background .35s,transform .35s var(--ease)}
+.service-card:hover .service-icon{background:var(--accent);transform:rotate(-6deg) scale(1.06)}
+.service-icon svg{width:28px;height:28px;stroke:#fff}
+.service-card h3{font-size:1.13rem;margin-bottom:8px}
+.service-card p{color:var(--muted);font-size:.91rem;margin-bottom:15px}
+.service-meta{display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:13px}
+.service-meta .from{font-weight:900;color:var(--ink)}
+.service-meta .from small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.service-meta a{font-weight:800;font-size:.85rem;color:var(--accent-dark);display:inline-flex;align-items:center;gap:5px}
+.service-meta a svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.service-meta a:hover svg{transform:translateX(4px)}
+.tag-247{position:absolute;top:16px;right:16px;background:#ffe9e0;color:var(--accent-dark);font-size:.66rem;font-weight:900;letter-spacing:.09em;padding:4px 9px;border-radius:6px;text-transform:uppercase}
+</style>
+<style>
+/* ---------- Emergency banner ---------- */
+.emergency-banner{background:linear-gradient(120deg,var(--accent),#ff8a3d);color:#fff;padding:54px 0;position:relative;overflow:hidden}
+.emergency-banner::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 18px,transparent 18px 36px)}
+.emergency-banner .container{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;position:relative}
+.emergency-banner h2{color:#fff;margin-bottom:6px}
+.emergency-banner p{color:#ffe9d9;font-size:1.03rem;max-width:560px}
+.eb-call{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.eb-phone{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+.eb-phone svg{width:30px;height:30px}
+.eb-phone:hover{text-decoration:underline}
+
+/* ---------- How it works ---------- */
+.how{background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:34px 28px;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.step:hover{transform:translateY(-7px);box-shadow:var(--shadow-card)}
+.step-num{font-size:3.4rem;font-weight:900;color:transparent;-webkit-text-stroke:2px var(--accent);line-height:1;margin-bottom:16px}
+.step h3{font-size:1.2rem;margin-bottom:9px}
+.step p{color:var(--muted);font-size:.94rem}
+.step .step-tag{display:inline-block;margin-top:16px;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:#e7f6ee;padding:5px 11px;border-radius:6px}
+
+/* ---------- Why us ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.why-card{display:flex;gap:18px;background:var(--ink);border-radius:var(--radius);padding:30px 28px;color:#fff;transition:transform .35s var(--ease)}
+.why-card:hover{transform:translateY(-6px)}
+.why-card .ic{width:54px;height:54px;flex:none;border-radius:13px;background:rgba(255,106,0,.18);display:grid;place-items:center}
+.why-card .ic svg{width:27px;height:27px;stroke:var(--accent)}
+.why-card h3{color:#fff;font-size:1.13rem;margin-bottom:6px}
+.why-card p{color:#a7b2bd;font-size:.92rem}
+
+/* ---------- Reviews ---------- */
+.reviews-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.rating-summary{display:flex;align-items:center;gap:16px;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 22px}
+.rating-summary .big{font-size:2.2rem;font-weight:900;line-height:1}
+.rating-summary .stars{display:flex;gap:2px;margin-bottom:4px}
+.rating-summary .stars svg{width:16px;height:16px;fill:#ffb400}
+.rating-summary small{color:var(--muted);font-weight:600}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .35s var(--ease),box-shadow .35s var(--ease);display:flex;flex-direction:column}
+.review-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-card)}
+.review-card .stars{display:flex;gap:2px;margin-bottom:14px}
+.review-card .stars svg{width:17px;height:17px;fill:#ffb400}
+.review-card blockquote{color:var(--ink-soft);font-size:.96rem;margin-bottom:18px;flex:1}
+.review-who{display:flex;align-items:center;gap:12px;border-top:1px dashed var(--line);padding-top:15px}
+.review-who .avatar{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.85rem;flex:none}
+.review-who strong{display:block;font-size:.92rem;line-height:1.25}
+.review-who span{color:var(--muted);font-size:.79rem}
+.review-who .verified{margin-left:auto;display:inline-flex;align-items:center;gap:5px;color:var(--green);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.review-who .verified svg{width:14px;height:14px;stroke:var(--green)}
+
+/* ---------- Service area ---------- */
+.area{background:var(--ink);color:#fff}
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.area-map{border-radius:20px;background:linear-gradient(150deg,#232b34,#171c22);border:1px solid rgba(255,255,255,.09);min-height:340px;position:relative;overflow:hidden}
+.area-map::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:38px 38px}
+.area-map .radius-ring{position:absolute;top:50%;left:50%;width:230px;height:230px;border:2px dashed rgba(255,106,0,.5);border-radius:50%;transform:translate(-50%,-50%);animation:ringspin 40s linear infinite}
+@keyframes ringspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.area-pin{position:absolute;transform:translate(-50%,-100%);text-align:center;z-index:2}
+.area-pin svg{width:26px;height:26px;fill:var(--accent);margin-inline:auto;animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.area-pin.hq svg{width:38px;height:38px}
+.area-pin span{display:block;font-size:.64rem;font-weight:800;letter-spacing:.05em;background:rgba(0,0,0,.55);padding:3px 8px;border-radius:99px;margin-top:2px;white-space:nowrap}
+.area-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.area-chips span{border:1.5px solid rgba(255,255,255,.18);color:#dbe2e9;padding:8px 15px;border-radius:99px;font-weight:700;font-size:.88rem;transition:all .3s;cursor:default}
+.area-chips span:hover{border-color:var(--accent);color:#ffb27a;transform:translateY(-2px)}
+.area-note{display:flex;gap:12px;margin-top:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 18px;font-size:.9rem;color:#c6d0da}
+.area-note svg{width:22px;height:22px;flex:none;stroke:var(--accent)}
+
+/* ---------- Quote form ---------- */
+.quote-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:start}
+.quote-perks{display:grid;gap:15px;margin-top:30px}
+.perk{display:flex;gap:14px;align-items:flex-start}
+.perk .ic{width:44px;height:44px;flex:none;border-radius:11px;background:var(--accent-soft);display:grid;place-items:center}
+.perk .ic svg{width:22px;height:22px;stroke:var(--accent-dark)}
+.perk h3{font-size:1rem;margin-bottom:2px}
+.perk p{color:var(--muted);font-size:.9rem}
+.form-card{background:var(--ink);border-radius:20px;padding:38px;box-shadow:var(--shadow);color:#fff;position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#14181d 14px 28px)}
+.form-card h3{color:#fff;font-size:1.4rem;margin:6px 0 6px}
+.form-card>p{color:#a7b2bd;font-size:.92rem;margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.8rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c6d0da}
+.field input,.field select,.field textarea{font-family:var(--font);font-size:.96rem;padding:13px 15px;border:1.5px solid rgba(255,255,255,.16);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;width:100%;appearance:none;transition:border-color .3s,box-shadow .3s,background .3s}
+.field select option{color:var(--ink)}
+.field textarea{resize:vertical;min-height:84px}
+.field input::placeholder,.field textarea::placeholder{color:#77828d}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,106,0,.22);background:rgba(255,255,255,.09)}
+.urgency{display:flex;gap:9px;flex-wrap:wrap}
+.urgency label{flex:1;cursor:pointer}
+.urgency input{position:absolute;opacity:0;pointer-events:none}
+.urgency .u-pill{display:block;text-align:center;padding:11px 8px;border:1.5px solid rgba(255,255,255,.16);border-radius:10px;font-weight:700;font-size:.86rem;color:#c6d0da;transition:all .25s;text-transform:none;letter-spacing:0}
+.urgency input:checked + .u-pill{background:var(--accent);border-color:var(--accent);color:#fff}
+.urgency input:focus-visible + .u-pill{box-shadow:0 0 0 4px rgba(255,106,0,.3)}
+.form-card .btn{width:100%;justify-content:center;margin-top:20px}
+.form-success{display:none;text-align:center;padding:24px 6px 6px}
+.form-success .ok-ring{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;background:rgba(46,204,113,.16);display:grid;place-items:center;animation:pop .5s var(--ease)}
+.form-success .ok-ring svg{width:36px;height:36px;stroke:#2ecc71}
+@keyframes pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.form-success h3{margin-bottom:8px}
+.form-success p{color:#a7b2bd;font-size:.93rem}
+.form-privacy{font-size:.78rem;color:#77828d;text-align:center;margin-top:14px}
+
+/* ---------- Footer ---------- */
+footer{background:#0d1013;color:#8b96a1;padding:64px 0 0;font-size:.92rem}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px}
+footer h4{color:#fff;font-size:1rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:.06em}
+footer li{padding:5px 0}
+footer a:hover{color:#ffb27a}
+.footer-brand p{margin-top:14px;max-width:300px}
+.footer-contact li{display:flex;gap:10px;align-items:flex-start}
+.footer-contact svg{width:17px;height:17px;stroke:var(--accent);flex:none;margin-top:3px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.83rem}
+
+/* ---------- Sticky mobile call bar ---------- */
+.call-bar{position:fixed;left:0;right:0;bottom:0;z-index:95;display:none;background:var(--ink);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -10px 26px rgba(0,0,0,.3)}
+.call-bar a{flex:1;justify-content:center;padding:13px 10px}
+
+/* ---------- Reveal animations ---------- */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}.reveal-d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .badges-track{animation:none;flex-wrap:wrap;width:auto}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1060px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr;gap:42px}
+  .hero-panel{max-width:560px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .area-grid,.quote-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  section{padding:62px 0}
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav-cta .btn{padding:11px 18px;font-size:.82rem}
+  .services-grid,.steps,.why-grid,.reviews-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .form-card{padding:30px 22px}
+  .hero{padding-top:56px}
+  .hero-stats{margin-top:48px}
+  .footer-grid{grid-template-columns:1fr}
+  .call-bar{display:flex}
+  body{padding-bottom:72px}
+  .es-left .es-sub{display:none}
+  .emergency-banner .container{flex-direction:column;align-items:flex-start}
+}
+</style>
+<style>
+/* ============================================================
+   V2 UPGRADE — responsive hardening + advanced design pass
+   Critique basis (Impeccable): the call button is the single
+   primary action, lit indicators get the only glow, 44px
+   targets, AA contrast on dark, input method — not just size.
+   ============================================================ */
+:root{--ease-spring:cubic-bezier(.34,1.45,.4,1)}
+html{scroll-padding-top:90px;overflow-x:hidden;overflow-x:clip}
+body{-webkit-tap-highlight-color:rgba(255,106,0,.16)}
+section{padding:clamp(60px,9vw,92px) 0}
+h1,h2{text-wrap:balance}
+.hero-sub,.section-head p{text-wrap:pretty}
+.hstat .num,.eb-phone,.service-meta .from,.rating-summary .big{font-variant-numeric:tabular-nums}
+
+/* Designed keyboard focus on every interactive element */
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+footer :focus-visible,.area :focus-visible,.call-bar :focus-visible{outline-color:#ffb27a}
+.field label{transition:color .3s}
+.field:focus-within label{color:#fff}
+
+/* Scroll-progress hairline */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:300;background:linear-gradient(90deg,var(--accent),#ffb27a);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+
+/* Buttons: sheen sweep on the call action + a real press state */
+.btn{position:relative}
+.btn:active,.es-call:active{transform:translateY(0) scale(.98)}
+.btn-call{overflow:hidden}
+.btn-call::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.35) 50%,transparent 68%);transform:translateX(-130%);transition:transform .7s var(--ease);pointer-events:none}
+@media(hover:hover) and (pointer:fine){.btn-call:hover::after{transform:translateX(130%)}}
+
+/* Safer tap targets */
+.burger{padding:10px}
+.es-call{padding:11px 18px}
+@media(pointer:coarse){
+  .nav-links a{padding:10px 0}
+  .mobile-menu a{padding:13px 8px}
+}
+
+/* Hero: drifting ember glow + glass dispatch panel */
+.hero::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,0,.15),transparent 65%);bottom:-270px;left:-170px;pointer-events:none;animation:meshDrift 18s ease-in-out infinite alternate}
+@keyframes meshDrift{from{transform:translate(0,0) scale(1)}to{transform:translate(52px,-30px) scale(1.12)}}
+.hero-panel{background:rgba(29,35,43,.86);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+/* The live dot gets its own green pulse (it was reusing the red keyframes) */
+.hp-live i{animation:pulseGreen 1.8s ease-out infinite}
+@keyframes pulseGreen{0%{box-shadow:0 0 0 0 rgba(46,204,113,.5)}70%{box-shadow:0 0 0 8px rgba(46,204,113,0)}100%{box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+
+/* Marquee: soft edge fade so badges arrive and leave gracefully */
+.badges{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+
+/* Steps: the outlined numeral fills with a whisper of orange on hover */
+.step-num{transition:color .35s var(--ease)}
+.step:hover .step-num{color:rgba(255,106,0,.15)}
+
+/* Emergency banner: a slow light sweep across the orange */
+.emergency-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.14) 50%,transparent 58%);transform:translateX(-110%);animation:bannerSheen 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes bannerSheen{0%{transform:translateX(-110%)}45%,100%{transform:translateX(110%)}}
+
+/* Service-area map: sonar rings pulse out of HQ */
+.area-map .sonar{position:absolute;top:calc(52% - 32px);left:calc(50% - 32px);width:64px;height:64px;border-radius:50%;border:2px solid rgba(255,106,0,.55);animation:sonar 2.8s ease-out infinite;pointer-events:none}
+.area-map .sonar.d2{animation-delay:1.4s}
+@keyframes sonar{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.1);opacity:0}}
+
+/* Reveal variant: gentle scale-in for visual panels */
+.reveal-scale{transform:translateY(26px) scale(.965)}
+.reveal-scale.visible{transform:none}
+
+/* Dark-form legibility: placeholders and fine print lifted to AA on ink */
+.field input::placeholder,.field textarea::placeholder{color:#8b96a1}
+.form-privacy{color:#8b96a1}
+/* Selects get a real chevron (they were appearance:none with no indicator) */
+.field select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffb27a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='m5 9 7 7 7-7'/></svg>");background-repeat:no-repeat;background-position:right 15px center;padding-right:42px}
+
+/* Container queries: components answer to their own width, not the viewport */
+.form-card{container-type:inline-size;container-name:formcard}
+@container formcard (max-width:540px){.form-grid{grid-template-columns:1fr}}
+.hero-panel{container-type:inline-size;container-name:panel}
+@container panel (max-width:400px){.hp-row .eta{display:none}.hp-row{padding:12px 13px}}
+
+/* Wide desktops: let the layout breathe past 1440px */
+@media(min-width:1440px){
+  .container{width:min(1260px,92%)}
+}
+
+/* Small phones */
+@media(max-width:680px){
+  .hero h1{font-size:clamp(2.15rem,10.5vw,2.6rem)}
+  .hstat .num{font-size:1.55rem}
+  .hstat{padding:22px 10px}
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+@media(max-width:480px){
+  .logo small{display:none}
+  .logo{font-size:1.12rem}
+  .nav{padding:12px 0}
+  .nav-cta .btn{padding:10px 13px;font-size:.78rem}
+  .hero-panel{padding:24px 18px}
+  .form-card{padding:28px 18px}
+  .emergency-strip .container{gap:10px}
+  .es-call{flex:1;justify-content:center}
+  .area-map{min-height:290px}
+}
+@media(max-width:400px){
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{justify-content:center}
+  .call-bar a{padding:14px 8px;font-size:.85rem}
+  .eb-phone{font-size:1.3rem}
+}
+
+/* Touch devices: hover lifts must not stick after a tap */
+@media(hover:none){
+  .service-card:hover,.step:hover,.why-card:hover,.review-card:hover{transform:none}
+  .hp-row:hover{transform:none}
+  .btn-call:hover,.btn-dark:hover,.btn-outline:hover,.btn-outline-light:hover,.es-call:hover{transform:none}
+  .service-card:hover .service-icon{transform:none}
+  .service-meta a:hover svg{transform:none}
+  .area-chips span:hover{transform:none}
+}
+
+/* Reduced motion: v2 layers join the existing policy */
+@media (prefers-reduced-motion:reduce){
+  .hero::after,.emergency-banner::after,.area-map .sonar{display:none}
+  .scroll-progress{display:none}
+  .btn-call::after{display:none}
+}
+</style>
+<style>
+/* ============================================================
+   V3 UPGRADE — animated pictures + deeper scroll effects
+   All artwork is inline SVG / CSS (zero external assets).
+   Motion uses transform/opacity only (clip-path appears only
+   in reveal transitions); every v3 layer settles or parks
+   under prefers-reduced-motion.
+   ============================================================ */
+
+/* ---------- Animated picture: service van driving the road strip ---------- */
+.van-strip{position:relative;height:98px;background:linear-gradient(180deg,#10141a,#0b0e12);overflow:hidden}
+.van-strip.reveal{clip-path:inset(0 100% 0 0);transition:opacity .8s var(--ease),transform .8s var(--ease),clip-path 1s var(--ease)}
+.van-strip.reveal.visible{clip-path:inset(0 0 0 0)}
+.van-strip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:#08090b}
+.road-dashes{position:absolute;left:0;bottom:17px;width:200%;height:3px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 26px,transparent 26px 52px);animation:roadMove .55s linear infinite}
+@keyframes roadMove{to{transform:translateX(-52px)}}
+.van{position:absolute;left:0;bottom:11px;width:184px;z-index:2;will-change:transform;animation:vanDrive 12s linear infinite}
+@keyframes vanDrive{from{transform:translateX(-210px)}to{transform:translateX(calc(100vw + 30px))}}
+.van svg{display:block;width:100%;height:auto;animation:vanBounce .5s ease-in-out infinite alternate}
+@keyframes vanBounce{from{transform:translateY(0)}to{transform:translateY(-1.6px)}}
+.van .wheel-spin{transform-box:fill-box;transform-origin:center;animation:wheelSpin .55s linear infinite}
+@keyframes wheelSpin{to{transform:rotate(360deg)}}
+.puff{position:absolute;left:-6px;bottom:6px;width:12px;height:12px;border-radius:50%;background:rgba(200,210,220,.4);opacity:0;animation:puff 1.7s linear infinite}
+.puff.p2{animation-delay:.55s}
+.puff.p3{animation-delay:1.1s}
+@keyframes puff{0%{transform:translate(0,0) scale(.5);opacity:.55}100%{transform:translate(-26px,-10px) scale(1.7);opacity:0}}
+
+/* ---------- Animated picture: live response gauge in the dispatch panel ---------- */
+.hp-foot{display:flex;align-items:center;gap:16px;margin-top:18px}
+.hp-foot p{color:#8b96a1;font-size:.83rem;margin:0}
+.gauge{width:104px;flex:none}
+.hero-panel.visible .gauge{animation:iconPop .7s var(--ease-spring) .25s backwards}
+.gauge .needle{transform-box:view-box;transform-origin:60px 64px;animation:needleSweep 4.6s ease-in-out infinite alternate}
+@keyframes needleSweep{from{transform:rotate(-64deg)}to{transform:rotate(-24deg)}}
+@keyframes iconPop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.12);opacity:1}100%{transform:scale(1);opacity:1}}
+
+/* ---------- Animated picture: leaking pipe strip ---------- */
+.pipe-strip{background:#fff;overflow:hidden}
+.pipe-strip.reveal{clip-path:inset(0 0 0 100%);transition:opacity .8s var(--ease),transform .8s var(--ease),clip-path 1s var(--ease)}
+.pipe-strip.reveal.visible{clip-path:inset(0 0 0 0)}
+.pipe-svg{width:100%;height:54px}
+.pipe-svg .drop{animation:dropFall 1.7s ease-in infinite}
+.pipe-svg .drop.d2{animation-delay:.55s}
+.pipe-svg .drop.d3{animation-delay:1.1s}
+@keyframes dropFall{0%{transform:translateY(0);opacity:0}14%{opacity:1}78%{opacity:1}100%{transform:translateY(15px);opacity:0}}
+.pipe-svg .puddle{transform-box:fill-box;transform-origin:center;animation:puddlePulse 1.7s ease-in-out infinite}
+@keyframes puddlePulse{0%,100%{transform:scaleX(.8);opacity:.25}50%{transform:scaleX(1.15);opacity:.45}}
+
+/* ---------- Hero parallax layer: rotating gear deco ---------- */
+.hero-deco{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.deco-gear{position:absolute;color:rgba(255,255,255,.055);will-change:transform}
+.deco-gear svg{width:100%;height:100%;animation:gearSpin 48s linear infinite}
+.deco-gear.g1{width:330px;height:330px;top:-90px;right:6%}
+.deco-gear.g2{width:190px;height:190px;bottom:120px;left:-50px}
+.deco-gear.g2 svg{animation-duration:34s;animation-direction:reverse}
+@keyframes gearSpin{to{transform:rotate(360deg)}}
+
+/* ---------- Scroll-linked: dispatch route through the how-it-works steps ---------- */
+.steps{position:relative}
+.route{position:absolute;top:59px;left:16%;right:16%;height:4px;border-radius:99px;background:rgba(20,24,29,.12);z-index:3;pointer-events:none}
+.route-fill{position:absolute;inset:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),#ffb27a);transform:scaleX(0);transform-origin:0 50%}
+.route-van{position:absolute;top:50%;left:0;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 5px rgba(255,106,0,.16);transform:translate(-50%,-50%)}
+.step{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .45s var(--ease)}
+.step.lit{border-color:rgba(255,106,0,.5)}
+.step.lit .step-num{color:rgba(255,106,0,.16)}
+@media(max-width:680px){
+  .route{top:56px;bottom:56px;left:57px;right:auto;width:4px;height:auto}
+  .route-fill{transform:scaleY(0);transform-origin:50% 0}
+  .route-van{left:50%;top:0}
+}
+
+/* ---------- Section glow drift: the service-area halo follows scroll ---------- */
+.area{background:radial-gradient(760px 420px at calc(18% + var(--ax,0px)) 0%,rgba(255,106,0,.12),transparent 60%),var(--ink)}
+
+/* ---------- Pinned moment: quote perks stick while the form scrolls ---------- */
+@media(min-width:1061px){
+  .quote-grid>div:first-of-type{position:sticky;top:106px}
+}
+
+/* ---------- Service icons: in-view pop + per-service hover scenes ---------- */
+.service-card.visible .service-icon{animation:iconPop .55s var(--ease-spring) .08s backwards}
+@keyframes wrenchWiggle{0%,100%{transform:rotate(0)}30%{transform:rotate(-11deg)}65%{transform:rotate(8deg)}}
+@keyframes waveDrift{from{transform:translateX(-2.5px)}to{transform:translateX(2.5px)}}
+@keyframes thermoPulse{0%,100%{transform:scale(1)}45%{transform:scale(1.13)}}
+@keyframes flameFlicker{from{transform:scaleY(1) skewX(-2deg)}to{transform:scaleY(1.09) skewX(2.5deg)}}
+@keyframes flakeSpin{to{transform:rotate(180deg)}}
+@keyframes dripBob{0%,100%{transform:translateY(0)}55%{transform:translateY(3px)}}
+@keyframes dropFallSm{0%{transform:translateY(0);opacity:1}70%{transform:translateY(4px);opacity:1}100%{transform:translateY(6px);opacity:.2}}
+@keyframes hammerSwing{0%,100%{transform:rotate(0)}35%{transform:rotate(-17deg)}70%{transform:rotate(5deg)}}
+@media(hover:hover) and (pointer:fine){
+  .services-grid .service-card:nth-child(1):hover .service-icon svg{animation:wrenchWiggle .55s var(--ease)}
+  .services-grid .service-card:nth-child(2):hover .service-icon svg{animation:waveDrift .7s ease-in-out infinite alternate}
+  .services-grid .service-card:nth-child(3):hover .service-icon svg{animation:thermoPulse .5s var(--ease)}
+  .services-grid .service-card:nth-child(4):hover .service-icon svg{animation:flameFlicker .32s ease-in-out infinite alternate}
+  .services-grid .service-card:nth-child(5):hover .service-icon svg{animation:flakeSpin 2.6s linear infinite}
+  .services-grid .service-card:nth-child(6):hover .service-icon svg{animation:dripBob .8s ease-in-out infinite}
+  .services-grid .service-card:nth-child(7):hover .service-icon svg path:last-child{animation:dropFallSm .85s ease-in infinite}
+  .services-grid .service-card:nth-child(8):hover .service-icon svg{animation:hammerSwing .55s var(--ease);transform-origin:78% 22%}
+}
+
+/* Reduced motion: v3 layers settle or park */
+@media (prefers-reduced-motion:reduce){
+  .van-strip .van{animation:none!important;left:50%;transform:translateX(-50%)}
+  .van-strip .van svg,.van-strip .wheel-spin,.puff,.road-dashes,.gauge .needle,.pipe-svg .drop,.pipe-svg .puddle,.deco-gear svg{animation:none!important}
+  .hero-panel.visible .gauge,.service-card.visible .service-icon{animation:none!important}
+  .pipe-svg .drop{opacity:0}
+  .van-strip.reveal,.pipe-strip.reveal{clip-path:none}
+  .route-fill{transform:scaleX(1)!important}
+  .route-van{left:100%}
+  @media(max-width:680px){
+    .route-fill{transform:scaleY(1)!important}
+    .route-van{left:50%;top:100%}
+  }
+}
+</style>
+<style>
+/* ============================================================
+   V4 — real photography, professionally art-directed
+   Photos live in the assets/ folder (relative paths) so buyers
+   can swap them like-for-like. Motion: Ken Burns on the hero
+   photo, parallax wrappers fed by the v3 rAF handler, hover
+   zoom on photo cards, clip-path reveals on scroll into view.
+   Transform / opacity only (clip-path in reveals only);
+   everything settles under prefers-reduced-motion.
+   ============================================================ */
+.photo-frame{position:relative;overflow:hidden;background:#232b34}
+.photo-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.photo-frame .plx-wrap{position:absolute;inset:-30px;will-change:transform}
+.photo-frame .plx-wrap img{width:100%;height:100%}
+@keyframes kbZoom{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.15) translate(-1.6%,1.1%)}}
+.kb{animation:kbZoom 18s ease-in-out infinite alternate}
+.photo-chip{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(20,24,29,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:8px 13px;border-radius:8px;border:1px solid rgba(255,255,255,.16)}
+
+/* Hero photo panel above the dispatch board (Ken Burns + parallax + clip reveal) */
+.hero-side{min-width:0}
+.hero-photo{height:248px;border-radius:18px;margin-bottom:18px;border:1px solid rgba(255,255,255,.1);transition:opacity .75s var(--ease),transform .75s var(--ease),clip-path 1s var(--ease)}
+.hero-photo.reveal{clip-path:inset(12% 6% 12% 6% round 18px)}
+.hero-photo.reveal.visible{clip-path:inset(0 0 0 0 round 18px)}
+
+/* Service card photo headers (hover zoom) */
+.service-photo{margin:-28px -24px 20px;height:148px;border-bottom:1px solid var(--line)}
+.service-photo img{transition:transform .8s var(--ease)}
+.service-card:hover .service-photo img{transform:scale(1.07)}
+.service-card .tag-247{z-index:3}
+
+/* Why-us crew photo (parallax + clip reveal) */
+.why-photo{height:340px;border-radius:20px;margin-bottom:38px;border:1px solid var(--line);transition:opacity .75s var(--ease),transform .75s var(--ease),clip-path 1s var(--ease)}
+.why-photo.reveal{clip-path:inset(10% 4% 10% 4% round 20px)}
+.why-photo.reveal.visible{clip-path:inset(0 0 0 0 round 20px)}
+
+/* Service-area fleet photo (parallax + clip reveal) */
+.area-photo{height:300px;border-radius:20px;margin-top:44px;border:1px solid rgba(255,255,255,.09);transition:opacity .75s var(--ease),transform .75s var(--ease),clip-path 1s var(--ease)}
+.area-photo.reveal{clip-path:inset(10% 4% 10% 4% round 20px)}
+.area-photo.reveal.visible{clip-path:inset(0 0 0 0 round 20px)}
+
+@media(max-width:680px){
+  .hero-photo{height:200px}
+  .why-photo{height:230px}
+  .area-photo{height:220px}
+}
+@media(hover:none){
+  .service-card:hover .service-photo img{transform:none}
+}
+/* Reduced motion: v4 photo layers settle */
+@media (prefers-reduced-motion:reduce){
+  .kb{animation:none!important}
+  .hero-photo.reveal,.why-photo.reveal,.area-photo.reveal{clip-path:none}
+  .service-photo img{transition:none}
+  .photo-frame .plx-wrap{transform:none!important}
+}
+</style>
+<style>
+/* ============================================================
+   V5 — brand-pattern gap upgrade (see BRAND-PATTERN-BRIEF.md)
+   P0 conversion structure · P1 proof density · P2 design polish.
+   All copy is original demo content for Apex Home Services.
+   ============================================================ */
+:root{
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow-card:0 0 0 1px rgba(20,24,29,.04),0 2px 6px rgba(20,24,29,.05),0 12px 28px -10px rgba(20,24,29,.20);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-micro:cubic-bezier(.2,0,0,1);
+}
+/* Radius + shadow grammar (H12): one radius scale, one card shadow */
+.btn{border-radius:var(--radius-sm)}
+.field input,.field select,.field textarea{border-radius:var(--radius-sm)}
+.hero-panel{border-radius:var(--radius);box-shadow:var(--shadow-card)}
+.hero-panel::before{border-radius:var(--radius) var(--radius) 0 0}
+.form-card{border-radius:var(--radius)}
+.area-map{border-radius:var(--radius)}
+.hero-photo,.why-photo,.area-photo{border-radius:var(--radius)}
+.hero-photo.reveal{clip-path:inset(12% 6% 12% 6% round 14px)}
+.hero-photo.reveal.visible{clip-path:inset(0 0 0 0 round 14px)}
+.why-photo.reveal,.area-photo.reveal{clip-path:inset(10% 4% 10% 4% round 14px)}
+.why-photo.reveal.visible,.area-photo.reveal.visible{clip-path:inset(0 0 0 0 round 14px)}
+/* Motion tokens (H11b): reveals decelerate, hovers go micro */
+.reveal{transition:opacity .75s var(--ease-out),transform .75s var(--ease-out)}
+.btn{transition:transform .25s var(--ease-micro),box-shadow .25s var(--ease-micro),background .25s var(--ease-micro),color .25s var(--ease-micro)}
+.service-card,.step,.why-card,.review-card,.hp-row{transition-timing-function:var(--ease-micro)}
+/* Proof eyebrow above the H1 (H1) */
+.proof-eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.02em;text-transform:none}
+/* Joined hero CTA group (H2): equal weight, tight 8px join,
+   the number stays on the call button */
+.hero-actions{gap:8px}
+.hero-actions .btn-outline-light{background:#232a33;border-color:rgba(255,255,255,.55)}
+/* Intent toggle (H3): segmented Emergency / Planned control,
+   shared by the dispatch panel and the quote section */
+.intent-toggle{display:flex;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:4px;margin-bottom:16px}
+.intent-btn{flex:1;min-height:44px;padding:10px 12px;border:0;border-radius:9px;background:transparent;color:#c6d0da;font-family:var(--font);font-weight:700;font-size:.86rem;cursor:pointer;transition:background .25s var(--ease-micro),color .25s var(--ease-micro)}
+.intent-btn.is-active[data-intent="emergency"]{background:var(--accent);color:#fff}
+.intent-btn.is-active[data-intent="planned"]{background:#fff;color:var(--ink)}
+.intent-toggle.light{background:var(--paper);border-color:var(--line);max-width:520px}
+.intent-toggle.light .intent-btn{color:var(--ink-soft)}
+.intent-toggle.light .intent-btn.is-active[data-intent="planned"]{background:var(--ink);color:#fff}
+.intent-action{display:flex}
+.intent-action .btn{flex:1;justify-content:center}
+.intent-action .btn[hidden]{display:none}
+.hp-action{margin:4px 0 16px}
+/* ZIP coverage checker (H6) */
+.hp-zip{border-top:1px solid rgba(255,255,255,.09);margin-top:18px;padding-top:16px}
+.hp-zip label{display:block;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c6d0da;margin-bottom:9px}
+.hp-zip-row{display:flex;gap:9px}
+.hp-zip-row input{flex:1;min-width:0;font-family:var(--font);font-size:.96rem;padding:12px 14px;min-height:48px;border:1.5px solid rgba(255,255,255,.16);border-radius:var(--radius-sm);background:rgba(255,255,255,.06);color:#fff}
+.hp-zip-row input::placeholder{color:#8b96a1}
+.hp-zip-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,106,0,.22)}
+.hp-zip-row .btn{min-height:48px;padding:12px 20px}
+.zip-result{font-size:.88rem;font-weight:600;margin-top:10px;min-height:1.35em}
+.zip-result.ok{color:#7ee2ae}
+.zip-result.warn{color:#ffb27a}
+.zip-result.err{color:#ff9d94}
+/* Guarantee band (H4): the emergency banner's orange, held static */
+.guarantee-band{background:linear-gradient(120deg,var(--accent),#ff8a3d);color:#fff;padding:56px 0;position:relative;overflow:hidden}
+.guarantee-band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 18px,transparent 18px 36px)}
+.guarantee-band .container{display:flex;align-items:center;gap:38px;flex-wrap:wrap;position:relative}
+.guarantee-num{font-size:clamp(3rem,7vw,4.6rem);font-weight:900;line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+.guarantee-num small{display:block;font-size:.3em;letter-spacing:.14em;font-weight:800;margin-top:6px}
+.guarantee-text h2{color:#fff;margin-bottom:8px}
+.guarantee-text p{color:#ffe9d9;font-size:1.02rem;max-width:560px}
+.guarantee-terms{font-size:.78rem;margin-top:10px}
+/* Typical ranges + per-card proof lines (H5 · H11a) */
+.from .typical-line{display:block;font-weight:600;color:var(--muted);font-size:.8125rem;letter-spacing:0;text-transform:none;margin-top:3px}
+.card-proof{font-size:.8rem;font-weight:700;color:var(--ink-soft);margin-bottom:10px}
+.card-proof .star{color:var(--accent-dark)}
+/* Demand line under the hero stats (H7) */
+.demand-line{background:var(--ink);text-align:center;padding:18px 16px 28px;color:#a7b2bd;font-size:.93rem;font-weight:600}
+.demand-line strong{color:#fff}
+@media(max-width:680px){
+  .intent-toggle{flex-direction:column}
+  .guarantee-band .container{gap:20px}
+}
+/* Reduced motion: v5 layers settle */
+@media (prefers-reduced-motion:reduce){
+  .intent-btn,.hp-zip-row input{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===================== EMERGENCY STRIP ===================== -->
+<div class="emergency-strip">
+  <div class="container">
+    <div class="es-left">
+      <span class="es-dot" aria-hidden="true"></span>
+      <span>24/7 EMERGENCY SERVICE <span class="es-sub">— burst pipe, no heating, flooding? We're on call now.</span></span>
+    </div>
+    <!-- EDIT: phone number -->
+    <a class="es-call" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> (512) 555-0187</a>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <!-- EDIT: company name -->
+      <a class="logo" href="#top" aria-label="Apex Home Services home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+        <span>Apex<small>Home Services</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#area">Service Area</a>
+        <a href="#quote">Get a Quote</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-call" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call Now</a>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#area">Service Area</a>
+      <a href="#quote">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-deco" aria-hidden="true">
+    <span class="deco-gear g1" data-plx="0.05"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="36" stroke="currentColor" stroke-width="11" stroke-dasharray="10.5 8.2"/><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="7" fill="currentColor"/></svg></span>
+    <span class="deco-gear g2" data-plx="-0.08"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="36" stroke="currentColor" stroke-width="11" stroke-dasharray="10.5 8.2"/><circle cx="50" cy="50" r="24" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="7" fill="currentColor"/></svg></span>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow proof-eyebrow reveal">★ 4.9 · 2,300+ Google reviews · Licensed TX-PLB-40217</span>
+      <h1 class="reveal reveal-d1">Burst pipe? No heat? <span class="hl">We're already on our way.</span></h1>
+      <p class="hero-sub reveal reveal-d2">Austin's licensed plumbers, HVAC engineers and handymen — at your door within the hour for emergencies, with the price agreed in writing before we pick up a tool.</p>
+      <div class="hero-actions reveal reveal-d3">
+        <a class="btn btn-call" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call (512) 555-0187</a>
+        <a class="btn btn-outline-light" href="#quote">Get a Free Quote</a>
+      </div>
+      <div class="hero-points reveal reveal-d4">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No call-out fee</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Flat-rate pricing</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Same rate day &amp; night</span>
+      </div>
+    </div>
+    <div class="hero-side">
+      <figure class="hero-photo photo-frame reveal">
+        <div class="plx-wrap" data-plx="-0.03"><img class="kb" src="assets/hero-tech.jpg" alt="An Apex Home Services technician in uniform standing beside a service van, ready for a call-out" width="1920" height="1280" fetchpriority="high" decoding="async"></div>
+        <figcaption class="photo-chip">On the road in Austin</figcaption>
+      </figure>
+    <div class="hero-panel reveal reveal-d2 reveal-scale" aria-label="Live dispatch board (illustrative)">
+      <div class="hp-head"><h3>Dispatch — Right Now</h3><span class="hp-live"><i></i> 6 vans on the road</span></div>
+      <div class="intent-toggle" role="group" aria-label="What do you need?">
+        <button type="button" class="intent-btn is-active" data-intent="emergency" aria-pressed="true">Emergency — I need help now</button>
+        <button type="button" class="intent-btn" data-intent="planned" aria-pressed="false">Planned job — I want a quote</button>
+      </div>
+      <div class="hp-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.3 6 10a6 6 0 1 1-12 0c0-3.7 6-10 6-10z"/></svg></span>
+        <div><strong>Burst pipe — Oakdale</strong><span>Water shut off, repair under way</span></div>
+        <div class="eta"><strong>Van 3</strong><span>On site</span></div>
+      </div>
+      <div class="hp-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 5 3.5 5 7a5 5 0 0 1-10 0c0-1.5.5-3 1.5-4 .5 1 1 2 2 3.5z"/></svg></span>
+        <div><strong>No heating — Riverside</strong><span>Furnace fault diagnosed</span></div>
+        <div class="eta"><strong>Van 1</strong><span>On site</span></div>
+      </div>
+      <div class="hp-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M2 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span>
+        <div><strong>Blocked drain — Northgate</strong><span>Engineer dispatched</span></div>
+        <div class="eta"><strong>Van 5</strong><span>~25 min</span></div>
+      </div>
+      <div class="intent-action hp-action">
+        <a class="btn btn-call" id="hpCall" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call (512) 555-0187</a>
+        <a class="btn btn-outline-light" id="hpQuote" href="#quote" hidden>Get my free quote</a>
+      </div>
+      <div class="hp-foot">
+        <svg class="gauge" viewBox="0 0 120 74" aria-hidden="true">
+          <path d="M14 64 A46 46 0 0 1 106 64" fill="none" stroke="#2a323c" stroke-width="10" stroke-linecap="round"/>
+          <path d="M14 64 A46 46 0 0 1 106 64" fill="none" stroke="#2ecc71" stroke-width="10" stroke-dasharray="48 200"/>
+          <path d="M14 64 A46 46 0 0 1 106 64" fill="none" stroke="#ffb400" stroke-width="10" stroke-dasharray="48 200" stroke-dashoffset="-48"/>
+          <path d="M14 64 A46 46 0 0 1 106 64" fill="none" stroke="#ff5252" stroke-width="10" stroke-dasharray="49 200" stroke-dashoffset="-96"/>
+          <g class="needle"><line x1="60" y1="64" x2="60" y2="27" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/></g>
+          <circle cx="60" cy="64" r="5" fill="#ffffff"/>
+          <text x="10" y="73" font-size="8.5" font-weight="700" fill="#8b96a1">0</text>
+          <text x="52" y="12" font-size="8.5" font-weight="700" fill="#8b96a1">30</text>
+          <text x="95" y="73" font-size="8.5" font-weight="700" fill="#8b96a1">60+</text>
+        </svg>
+        <p>Average emergency arrival across Austin today: <strong style="color:#ffb27a">47 minutes</strong>.</p>
+      </div>
+      <form class="hp-zip" id="zipForm" novalidate>
+        <label for="zipInput">Check your ZIP — do we cover you?</label>
+        <div class="hp-zip-row">
+          <input id="zipInput" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="e.g. 78704">
+          <button class="btn btn-call" type="submit">Check</button>
+        </div>
+        <p class="zip-result" id="zipResult" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    </div>
+  </div>
+  <div class="hero-stats" data-plx="0.03">
+    <div class="hstat"><div class="num"><span class="counter" data-target="15">0</span><em>+</em></div><div class="lbl">Years in business</div></div>
+    <div class="hstat"><div class="num"><span class="counter" data-target="9400">0</span><em>+</em></div><div class="lbl">Jobs completed</div></div>
+    <div class="hstat"><div class="num"><span class="counter" data-target="60">0</span><em> min</em></div><div class="lbl">Emergency target</div></div>
+    <div class="hstat"><div class="num">4.9<em>★</em></div><div class="lbl">2,300+ Google reviews</div></div>
+  </div>
+  <p class="demand-line reveal"><strong>214 jobs booked</strong> in the Austin area this month — yours could be next.</p>
+</section>
+
+<!-- ===================== VAN STRIP (v3 animated picture) ===================== -->
+<div class="van-strip reveal" aria-hidden="true">
+  <div class="road-dashes"></div>
+  <div class="van">
+    <span class="puff"></span><span class="puff p2"></span><span class="puff p3"></span>
+    <svg viewBox="0 0 168 74">
+      <rect x="4" y="12" width="92" height="40" rx="5" fill="#eef1f4"/>
+      <path d="M96 52V22c0-4 2-6 6-6h13c2 0 4 1 5 2l13 15c6 1 11 4 11 9v10z" fill="#eef1f4"/>
+      <path d="M102 21h11l11 13h-22z" fill="#1d232b"/>
+      <rect x="4" y="36" width="140" height="7" fill="#ff6a00"/>
+      <text x="13" y="31" font-size="13" font-weight="900" letter-spacing="1" fill="#14181d">APEX</text>
+      <text x="60" y="31" font-size="9" font-weight="800" fill="#d95700">24/7</text>
+      <rect x="135" y="40" width="8" height="5" rx="2" fill="#ffb400"/>
+      <g transform="translate(38 58)"><g class="wheel-spin"><circle r="10.5" fill="#14181d"/><circle r="4.4" fill="#aeb8c2"/><path d="M0-8v16M-8 0h16M-5.7-5.7l11.4 11.4M5.7-5.7L-5.7 5.7" stroke="#aeb8c2" stroke-width="2"/></g></g>
+      <g transform="translate(126 58)"><g class="wheel-spin"><circle r="10.5" fill="#14181d"/><circle r="4.4" fill="#aeb8c2"/><path d="M0-8v16M-8 0h16M-5.7-5.7l11.4 11.4M5.7-5.7L-5.7 5.7" stroke="#aeb8c2" stroke-width="2"/></g></g>
+    </svg>
+  </div>
+</div>
+
+<!-- ===================== TRUST BADGES ===================== -->
+<div class="badges" aria-label="Our guarantees">
+  <div class="badges-track" id="badgesTrack">
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg><span>Licensed &amp; Insured<small>Master licence #TX-PLB-40217</small></span></div>
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.2 2.4 2.4 4.6-5"/></svg><span>2-Year Guarantee<small>On all workmanship</small></span></div>
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c-.8-1.2-2.6-2-5-2-3 0-5 1.3-5 3.2 0 4.3 10 2.4 10 6.6 0 1.9-2 3.2-5 3.2-2.4 0-4.2-.8-5-2"/></svg><span>Upfront Flat-Rate<small>Price agreed before we start</small></span></div>
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg><span>Background-Checked<small>Every technician, every visit</small></span></div>
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>No Overtime Charges<small>Same rate, day or night</small></span></div>
+    <div class="badge-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><span>4.9-Star Rated<small>From 2,300+ Google reviews</small></span></div>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Fix</span>
+      <h2>One call fixes it all</h2>
+      <p>Plumbing, heating, cooling and all the odd jobs in between — done by our own licensed technicians, never subcontractors.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="tag-247">24/7</span>
+        <div class="service-photo photo-frame"><img src="assets/plumber.jpg" alt="Apex plumber repairing a sink pipe with a wrench during an emergency call-out" width="1920" height="1280" loading="lazy" decoding="async"></div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipes, major leaks and flooding — we stop the damage fast, day or night, weekends and holidays.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 2,100+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Call-out</small>FREE</div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M2 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
+        <h3>Drain Cleaning</h3>
+        <p>Blocked sinks, toilets and main lines cleared with camera inspection included — no guesswork, no repeat blockages.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 1,850+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>From</small>$79</div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4a2 2 0 1 0-4 0v9.3a4.5 4.5 0 1 0 4 0z"/><path d="M12 9v7"/></svg></div>
+        <h3>Water Heaters</h3>
+        <p>Repair, replacement and tankless upgrades. Most standard heaters swapped same-day, with the old unit removed free.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 1,300+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Repair from</small>$149<span class="typical-line">Typical range $180–$450</span></div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d3">
+        <span class="tag-247">24/7</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 5 3.5 5 7a5 5 0 0 1-10 0c0-1.5.5-3 1.5-4 .5 1 1 2 2 3.5z"/></svg></div>
+        <h3>Heating &amp; Furnaces</h3>
+        <p>Furnace repairs, annual tune-ups and full system installs — with carbon-monoxide safety checks on every visit.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 1,150+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Tune-up</small>$99<span class="typical-line">Typical range $190–$620</span></div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-photo photo-frame"><img src="assets/hvac.jpg" alt="Apex technician servicing an outdoor air-conditioning unit" width="1920" height="1280" loading="lazy" decoding="async"></div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17M12 2l-2 3m2-3 2 3M12 22l-2-3m2 3 2-3M3.3 7 6.5 6.6M3.3 7l.5 3.2M20.7 17l-3.2.4m3.2-.4-.5-3.2"/></svg></div>
+        <h3>Air Conditioning</h3>
+        <p>AC repair, refrigerant, and high-efficiency installs sized properly for your home — no oversold tonnage, ever.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 1,250+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Repair from</small>$119<span class="typical-line">Typical range $180–$540</span></div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.3 6 10a6 6 0 1 1-12 0c0-3.7 6-10 6-10z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
+        <h3>Leak Detection &amp; Repipes</h3>
+        <p>Acoustic and thermal leak detection finds the problem without tearing your home apart. Whole-home repipes in 1–2 days.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 640+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Detection from</small>$149<span class="typical-line">Typical range $220–$480</span></div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21v-5a6 6 0 0 1 6-6h4V7h6v3h-3.5"/><path d="M5 13h6M15 10V4h7v3"/><path d="M19 15.5c.8 1 1.3 1.8 1.3 2.5a1.3 1.3 0 1 1-2.6 0c0-.7.5-1.5 1.3-2.5z"/></svg></div>
+        <h3>Bathroom &amp; Kitchen</h3>
+        <p>Faucets, toilets, showers, garbage disposals and appliance hook-ups — fitted neatly and sealed properly, first time.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 720+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>From</small>$129</div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="service-card reveal reveal-d3">
+        <div class="service-photo photo-frame"><img src="assets/electrician.jpg" alt="Apex technician safely rewiring an electrical panel with protective gear" width="1920" height="1280" loading="lazy" decoding="async"></div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.4 8.4a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.9-1.9A2 2 0 0 1 19 8.2V7l-2.3-2.3a6 6 0 0 0-4.2-1.8L9 2.9l.9.9A6.2 6.2 0 0 1 12 8.4V10l2 2h1.2a2 2 0 0 1 1.4.6l1.9 1.9"/></svg></div>
+        <h3>Handyman Services</h3>
+        <p>Drywall, doors, decking, tiling, mounting and the whole honey-do list — one visit, one fair hourly rate, no minimums games.</p>
+        <div class="card-proof"><span class="star">★</span> 4.9 · 390+ jobs done</div>
+        <div class="service-meta"><div class="from"><small>Per hour</small>$65</div><a href="#quote">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PIPE STRIP (v3 animated picture) ===================== -->
+<div class="pipe-strip reveal" aria-hidden="true">
+  <svg class="pipe-svg" viewBox="0 0 1440 54" preserveAspectRatio="none">
+    <defs><linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5763"/><stop offset=".45" stop-color="#232a32"/><stop offset="1" stop-color="#39434e"/></linearGradient></defs>
+    <rect x="0" y="13" width="1440" height="17" fill="url(#pipeGrad)"/>
+    <rect x="0" y="16" width="1440" height="3" fill="rgba(255,255,255,.14)"/>
+    <rect x="296" y="7" width="15" height="29" rx="3" fill="#14181d"/>
+    <rect x="902" y="7" width="15" height="29" rx="3" fill="#14181d"/>
+    <rect x="618" y="13" width="5" height="17" fill="#ff6a00" opacity=".85"/>
+    <circle class="drop" cx="620" cy="34" r="4" fill="#4aa8d8"/>
+    <circle class="drop d2" cx="620" cy="34" r="3.4" fill="#4aa8d8"/>
+    <circle class="drop d3" cx="620" cy="34" r="3" fill="#4aa8d8"/>
+    <ellipse class="puddle" cx="620" cy="50" rx="15" ry="2.6" fill="#4aa8d8" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- ===================== EMERGENCY BANNER ===================== -->
+<div class="emergency-banner">
+  <div class="container reveal">
+    <div>
+      <h2>Home emergency? Don't wait on it.</h2>
+      <p>Water and heating problems get worse (and more expensive) by the hour. Our night crew is on the road right now.</p>
+    </div>
+    <div class="eb-call">
+      <a class="eb-phone" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> (512) 555-0187</a>
+      <a class="btn btn-dark" href="#quote">Request a Callback</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Fixed in three steps</h2>
+      <p>No phone tag, no vague "we'll see when we get there" pricing. Here's exactly how every Apex job runs.</p>
+    </div>
+    <div class="steps">
+      <div class="route" aria-hidden="true"><div class="route-fill"></div><div class="route-van"></div></div>
+      <article class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Call or book online</h3>
+        <p>Tell us what's wrong in two minutes. Emergencies jump the queue — a real dispatcher answers 24/7, not a call centre overseas.</p>
+        <span class="step-tag">A person answers in under 60 seconds — 24/7</span>
+      </article>
+      <article class="step reveal reveal-d1">
+        <div class="step-num">02</div>
+        <h3>Get your flat-rate price</h3>
+        <p>Your technician inspects the problem and gives you one fixed price in writing. Approve it, or pay nothing — the visit is free.</p>
+        <span class="step-tag">Flat-rate price in writing, before work starts</span>
+      </article>
+      <article class="step reveal reveal-d2">
+        <div class="step-num">03</div>
+        <h3>We fix it — guaranteed</h3>
+        <p>Work done the same visit wherever possible, mess cleaned up, and every repair backed by our 2-year workmanship guarantee.</p>
+        <span class="step-tag">Most jobs finished on the first visit</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section id="why" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Apex</span>
+      <h2>The crew Austin actually recommends</h2>
+      <p>Most of our work comes from repeat customers and their neighbours. That only happens when the basics are done right, every time.</p>
+    </div>
+    <figure class="why-photo photo-frame reveal">
+      <div class="plx-wrap" data-plx="0.035"><img src="assets/team.jpg" alt="Two Apex technicians reviewing a job on a tablet outside a customer's home" width="1920" height="1280" loading="lazy" decoding="async"></div>
+      <figcaption class="photo-chip">Our own crew — never subcontractors</figcaption>
+    </figure>
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg></span>
+        <div><h3>Licensed, bonded &amp; insured</h3><p>Master plumbing licence #TX-PLB-40217 and EPA-certified HVAC techs. Full liability cover on every job — your home is protected, always.</p></div>
+      </article>
+      <article class="why-card reveal reveal-d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c-.8-1.2-2.6-2-5-2-3 0-5 1.3-5 3.2 0 4.3 10 2.4 10 6.6 0 1.9-2 3.2-5 3.2-2.4 0-4.2-.8-5-2"/></svg></span>
+        <div><h3>Flat-rate, in writing</h3><p>The price we quote is the price you pay — approved by you before work starts. No hourly meters, no "surprises" on the invoice.</p></div>
+      </article>
+      <article class="why-card reveal reveal-d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.2 2.4 2.4 4.6-5"/></svg></span>
+        <div><h3>2-year workmanship guarantee</h3><p>If our repair fails within two years, we come back and fix it free. Parts carry the full manufacturer warranty on top.</p></div>
+      </article>
+      <article class="why-card reveal reveal-d2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
+        <div><h3>Our own vetted technicians</h3><p>Background-checked, drug-tested, uniformed and in marked vans — you'll get your tech's name and photo by text before they arrive.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE BAND (v5) ===================== -->
+<div class="guarantee-band">
+  <div class="container reveal">
+    <div class="guarantee-num">2-Year<small>Workmanship Guarantee</small></div>
+    <div class="guarantee-text">
+      <h2>Fixed right — or we come back free</h2>
+      <p>Every repair our crew makes is covered for two full years. If the same fault shows up again in that time, we return and put it right at no cost to you.</p>
+      <p class="guarantee-terms">Covers labour on Apex repairs. Parts carry the full manufacturer warranty. Full written terms come with every quote.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== REVIEWS ===================== -->
+<section id="reviews" style="padding-top:20px">
+  <div class="container">
+    <div class="reviews-head reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="eyebrow">Customer Reviews</span>
+        <h2>Neighbours who'd call us again</h2>
+      </div>
+      <div class="rating-summary">
+        <div class="big">4.9</div>
+        <div>
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+          <small>2,300+ Google reviews</small>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+        <blockquote>"Pipe burst at 11pm on a Sunday. Apex answered on the second ring and had the water off and the pipe replaced before 1am. Same price they quoted on the phone."</blockquote>
+        <div class="review-who"><span class="avatar">DR</span><div><strong>Danielle R.</strong><span>Oakdale · Emergency repair</span></div><span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Verified</span></div>
+      </article>
+      <article class="review-card reveal reveal-d1">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+        <blockquote>"Three companies told me I needed a new furnace. Apex found a faulty igniter, fixed it for under $200, and it's run perfectly for two winters. Honest people."</blockquote>
+        <div class="review-who"><span class="avatar">MK</span><div><strong>Michael K.</strong><span>Riverside · Heating repair</span></div><span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Verified</span></div>
+      </article>
+      <article class="review-card reveal reveal-d2">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+        <blockquote>"Booked a handyman for a list of six small jobs. One visit, everything done, floors protected, mess gone. I've already booked them for the deck repair."</blockquote>
+        <div class="review-who"><span class="avatar">AS</span><div><strong>Alicia S.</strong><span>Northgate · Handyman visit</span></div><span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Verified</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE AREA ===================== -->
+<section class="area on-dark" id="area">
+  <div class="container area-grid">
+    <div class="area-map reveal reveal-scale" aria-hidden="true">
+      <div class="radius-ring"></div>
+      <span class="sonar"></span><span class="sonar d2"></span>
+      <div class="area-pin hq" style="top:52%;left:50%"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/><circle cx="12" cy="10.6" r="2.7" fill="#171c22"/></svg><span>APEX HQ — Central Austin</span></div>
+      <div class="area-pin" style="top:22%;left:30%"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/></svg><span>Northgate</span></div>
+      <div class="area-pin" style="top:30%;left:74%"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/></svg><span>Oakdale</span></div>
+      <div class="area-pin" style="top:74%;left:70%"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/></svg><span>Riverside</span></div>
+      <div class="area-pin" style="top:78%;left:26%"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/></svg><span>South Park</span></div>
+    </div>
+    <div>
+      <div class="section-head reveal" style="margin-bottom:22px">
+        <span class="eyebrow">Service Area</span>
+        <h2>Serving greater Austin within 25 miles</h2>
+        <p>Six vans staged across the city keep our emergency arrival under an hour in every neighbourhood below.</p>
+      </div>
+      <div class="area-chips reveal reveal-d1">
+        <span>Downtown Austin</span><span>Northgate</span><span>Oakdale</span><span>Riverside</span><span>South Park</span><span>Cedar Park</span><span>Round Rock</span><span>Pflugerville</span><span>Georgetown</span><span>Lakeway</span><span>Westlake</span><span>San Marcos</span>
+      </div>
+      <div class="area-note reveal reveal-d2">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><strong>Outside the zone?</strong> Call us anyway — for larger jobs (repipes, system installs, remodels) we regularly travel further across Travis and Williamson counties.</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <figure class="area-photo photo-frame reveal">
+      <div class="plx-wrap" data-plx="0.03"><img src="assets/van.jpg" alt="A white Apex service van with subtle orange branding parked on a suburban Austin street" width="1920" height="1280" loading="lazy" decoding="async"></div>
+      <figcaption class="photo-chip">Six vans staged across Austin</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== QUOTE FORM ===================== -->
+<section id="quote">
+  <div class="container quote-grid">
+    <div class="reveal">
+      <span class="eyebrow">Free Quote</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.65rem);margin-bottom:14px">Tell us what's broken</h2>
+      <p style="color:var(--muted);font-size:1.05rem">Send the form and a real dispatcher — not a bot — will call you back with next steps and a time window. No obligation, no pressure.</p>
+      <p style="font-weight:800;margin:26px 0 10px">How urgent is it?</p>
+      <div class="intent-toggle light" role="group" aria-label="Choose urgency">
+        <button type="button" class="intent-btn is-active" data-intent="emergency" aria-pressed="true">Emergency — I need help now</button>
+        <button type="button" class="intent-btn" data-intent="planned" aria-pressed="false">Planned job — I want a quote</button>
+      </div>
+      <div class="quote-perks">
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Callback within 15 minutes</h3><p>During opening hours — and for emergencies, around the clock.</p></div></div>
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.5c-.8-1.2-2.6-2-5-2-3 0-5 1.3-5 3.2 0 4.3 10 2.4 10 6.6 0 1.9-2 3.2-5 3.2-2.4 0-4.2-.8-5-2"/></svg></span><div><h3>Free visit, free diagnosis</h3><p>If you don't approve the flat-rate quote, you pay nothing at all.</p></div></div>
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg></span><div><h3>Guaranteed in writing</h3><p>Every approved quote comes with the 2-year workmanship guarantee.</p></div></div>
+      </div>
+    </div>
+    <div class="form-card reveal reveal-d1">
+      <form id="quoteForm" novalidate>
+        <h3>Request your free quote</h3>
+        <p>Fields marked * are required. This form is a demo — connect it to your inbox or CRM to go live.</p>
+        <div class="form-grid">
+          <div class="field"><label for="qName">Full name *</label><input id="qName" name="name" type="text" placeholder="e.g. Chris Walker" required></div>
+          <div class="field"><label for="qPhone">Phone *</label><input id="qPhone" name="phone" type="tel" placeholder="(512) 555-0000" required></div>
+          <div class="field"><label for="qService">Service needed *</label>
+            <select id="qService" name="service" required>
+              <option value="">Select a service…</option>
+              <option>Emergency plumbing</option><option>Drain cleaning</option><option>Water heater</option>
+              <option>Heating / furnace</option><option>Air conditioning</option><option>Leak detection / repipe</option>
+              <option>Bathroom / kitchen fitting</option><option>Handyman job</option><option>Something else</option>
+            </select></div>
+          <div class="field"><label for="qZip">ZIP code</label><input id="qZip" name="zip" type="text" inputmode="numeric" placeholder="e.g. 78746"></div>
+          <div class="field full"><label>How urgent is it?</label>
+            <div class="urgency" role="radiogroup" aria-label="Urgency">
+              <label><input type="radio" name="urgency" value="Emergency — now"><span class="u-pill">Emergency — now</span></label>
+              <label><input type="radio" name="urgency" value="Today if possible" checked><span class="u-pill">Today if possible</span></label>
+              <label><input type="radio" name="urgency" value="This week"><span class="u-pill">This week</span></label>
+            </div></div>
+          <div class="field full"><label for="qMsg">Describe the problem</label><textarea id="qMsg" name="message" placeholder="e.g. Water heater leaking from the base, garage is flooding slowly…"></textarea></div>
+        </div>
+        <button class="btn btn-call" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg> Request My Free Quote</button>
+        <p class="form-privacy">Prefer to talk? Call <a href="tel:+15125550187" style="color:#ffb27a;font-weight:700">(512) 555-0187</a> — a dispatcher answers 24/7.</p>
+      </form>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="ok-ring"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Request received!</h3>
+        <p id="successText">A dispatcher will call you back shortly.</p>
+        <button class="btn btn-outline-light" id="quoteAgain" style="margin-top:18px;width:auto">Send another request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top" style="color:#fff">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+          <span>Apex<small style="color:#8b96a1">Home Services</small></span>
+        </a>
+        <p>Family-owned since 2011. Plumbing, HVAC and handyman services for greater Austin — done right, priced upfront, guaranteed for two years.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Emergency plumbing</a></li>
+          <li><a href="#services">Drain cleaning</a></li>
+          <li><a href="#services">Water heaters</a></li>
+          <li><a href="#services">Heating &amp; AC</a></li>
+          <li><a href="#services">Handyman services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#area">Service area</a></li>
+          <li><a href="#quote">Get a quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> <a href="tel:+15125550187">(512) 555-0187</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg> <a href="mailto:dispatch@apexhome.example">dispatch@apexhome.example</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> 1180 Industrial Pkwy, Austin, TX 78744</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Open 24 hours, 7 days a week</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Apex Home Services LLC · Master Licence #TX-PLB-40217</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile call bar -->
+<div class="call-bar">
+  <a class="btn btn-call" href="tel:+15125550187"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call Now</a>
+  <a class="btn btn-outline-light" href="#quote">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Sticky header shadow ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ---------- Duplicate badge track for a seamless marquee loop ---------- */
+  var track = document.getElementById('badgesTrack');
+  track.innerHTML += track.innerHTML;
+
+  /* ---------- Scroll-reveal ---------- */
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); revealIO.unobserve(en.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ revealIO.observe(el); });
+
+  /* ---------- Animated counters ---------- */
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var dur = 1600, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-US');
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counterIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ animateCounter(en.target); counterIO.unobserve(en.target); }
+    });
+  }, {threshold:.5});
+  document.querySelectorAll('.counter').forEach(function(el){ counterIO.observe(el); });
+
+  /* ---------- Quote form (demo) ---------- */
+  var form = document.getElementById('quoteForm');
+  var success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('qName');
+    var phone = document.getElementById('qPhone');
+    var service = document.getElementById('qService');
+    var valid = true;
+    [name, phone, service].forEach(function(f){
+      if(!f.value.trim()){ valid = false; f.style.borderColor = '#ff5252'; f.style.boxShadow = '0 0 0 4px rgba(255,82,82,.2)'; }
+      else { f.style.borderColor = ''; f.style.boxShadow = ''; }
+    });
+    if(!valid) return;
+    var urgency = form.querySelector('input[name="urgency"]:checked');
+    var first = name.value.trim().split(' ')[0];
+    document.getElementById('successText').textContent =
+      'Thanks, ' + first + ' — your ' + service.value.toLowerCase() + ' request (' +
+      (urgency ? urgency.value.toLowerCase() : 'standard') +
+      ') is with our dispatch team. We\'ll call ' + phone.value.trim() + ' within 15 minutes during opening hours — immediately for emergencies.';
+    form.style.display = 'none';
+    success.style.display = 'block';
+    success.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+  document.getElementById('quoteAgain').addEventListener('click', function(){
+    form.reset(); form.style.display = ''; success.style.display = 'none';
+  });
+})();
+</script>
+<script>
+/* ---------- v2: scroll progress hairline ---------- */
+(function(){
+  "use strict";
+  var bar = document.querySelector('.scroll-progress');
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    if(bar && max > 0) bar.style.transform = 'scaleX(' + (h.scrollTop / max) + ')';
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  update();
+})();
+</script>
+<script>
+/* ============================================================
+   V3 scroll effects — multi-depth parallax, the dispatch route
+   line through the how-it-works steps, and the service-area
+   glow drift. One rAF-throttled passive scroll handler;
+   everything settles statically under prefers-reduced-motion.
+   ============================================================ */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var how = document.getElementById('how');
+  var routeFill = document.querySelector('.route-fill');
+  var routeVan = document.querySelector('.route-van');
+  var steps = how ? Array.prototype.slice.call(how.querySelectorAll('.step')) : [];
+  var area = document.querySelector('.area');
+  var plx = Array.prototype.slice.call(document.querySelectorAll('[data-plx]'));
+  var thresholds = [0.02, 0.5, 0.98];
+  var ticking = false;
+
+  function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+    var mobile = window.innerWidth <= 680;
+
+    /* Dispatch route: draws through the steps as the section
+       scrolls; the marker rides the line, steps light up behind it */
+    if (how && routeFill && routeVan) {
+      if (reduce) {
+        routeFill.style.transform = mobile ? 'scaleY(1)' : 'scaleX(1)';
+        if (mobile) { routeVan.style.top = '100%'; routeVan.style.left = ''; }
+        else { routeVan.style.left = '100%'; routeVan.style.top = ''; }
+        steps.forEach(function (s) { s.classList.add('lit'); });
+      } else {
+        var r = how.getBoundingClientRect();
+        var p = clamp01((vh * 0.8 - r.top) / (r.height * 0.85));
+        if (mobile) {
+          routeFill.style.transform = 'scaleY(' + p + ')';
+          routeVan.style.top = (p * 100).toFixed(1) + '%';
+          routeVan.style.left = '';
+        } else {
+          routeFill.style.transform = 'scaleX(' + p + ')';
+          routeVan.style.left = (p * 100).toFixed(1) + '%';
+          routeVan.style.top = '';
+        }
+        steps.forEach(function (s, i) {
+          s.classList.toggle('lit', p >= (thresholds[i] || 1));
+        });
+      }
+    }
+
+    /* Service-area glow drift */
+    if (area) {
+      var ar = area.getBoundingClientRect();
+      var ap = clamp01((vh - ar.top) / (vh + ar.height));
+      area.style.setProperty('--ax', ((ap - 0.5) * 160).toFixed(1) + 'px');
+    }
+
+    /* Multi-depth parallax (desktop only, reduced-motion off) */
+    if (!reduce && window.innerWidth > 1020) {
+      plx.forEach(function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.bottom < -120 || r2.top > vh + 120) return;
+        var d = (r2.top + r2.height / 2 - vh / 2) * parseFloat(el.getAttribute('data-plx'), 10);
+        d = Math.max(-60, Math.min(60, d));
+        el.style.transform = 'translate3d(0,' + d.toFixed(1) + 'px,0)';
+      });
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+<script>
+/* ============================================================
+   V5 — intent toggle (H3) + ZIP coverage checker (H6).
+   Demo logic only: the ZIP map mirrors the 12 areas listed in
+   the Service Area section (and documented in the README).
+   ============================================================ */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Intent toggle: Emergency vs Planned ----------
+     Both toggles (dispatch panel + quote section) stay in sync.
+     Emergency swaps the panel's action to the call button and
+     pre-checks the form's Emergency pill; Planned scrolls to
+     the quote form and focuses the service select. */
+  var hpCall = document.getElementById('hpCall');
+  var hpQuote = document.getElementById('hpQuote');
+  function setIntent(intent, interacted) {
+    document.querySelectorAll('.intent-btn').forEach(function (b) {
+      var on = b.getAttribute('data-intent') === intent;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (hpCall && hpQuote) {
+      hpCall.hidden = intent !== 'emergency';
+      hpQuote.hidden = intent !== 'planned';
+    }
+    if (!interacted) return;
+    if (intent === 'emergency') {
+      var radio = document.querySelector('input[name="urgency"][value="Emergency — now"]');
+      if (radio) radio.checked = true;
+    }
+    if (intent === 'planned') {
+      var q = document.getElementById('quote');
+      if (q) q.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+      var sel = document.getElementById('qService');
+      if (sel) window.setTimeout(function () { sel.focus({ preventScroll: true }); }, reduce ? 0 : 650);
+    }
+  }
+  document.querySelectorAll('.intent-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      setIntent(b.getAttribute('data-intent'), true);
+    });
+  });
+  setIntent('emergency', false);
+
+  /* ---------- ZIP coverage checker ---------- */
+  var ZIP_AREAS = {
+    '78701': 'Downtown Austin', '78758': 'Northgate', '78723': 'Oakdale',
+    '78741': 'Riverside', '78704': 'South Park', '78613': 'Cedar Park',
+    '78664': 'Round Rock', '78660': 'Pflugerville', '78626': 'Georgetown',
+    '78734': 'Lakeway', '78746': 'Westlake', '78666': 'San Marcos'
+  };
+  var zipForm = document.getElementById('zipForm');
+  if (zipForm) {
+    var zipInput = document.getElementById('zipInput');
+    var zipResult = document.getElementById('zipResult');
+    zipForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var zip = zipInput.value.trim();
+      zipResult.className = 'zip-result';
+      if (!/^\d{5}$/.test(zip)) {
+        zipResult.textContent = 'Please enter a 5-digit ZIP code.';
+        zipResult.classList.add('err');
+        zipInput.focus();
+        return;
+      }
+      if (Object.prototype.hasOwnProperty.call(ZIP_AREAS, zip)) {
+        zipResult.textContent = 'Good news — we cover ' + ZIP_AREAS[zip] + ', and technicians are in your area today.';
+        zipResult.classList.add('ok');
+      } else {
+        zipResult.textContent = 'That ZIP sits just outside our core area — call us anyway, we may still be able to help.';
+        zipResult.classList.add('warn');
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
